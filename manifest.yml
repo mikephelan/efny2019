@@ -1,0 +1,12 @@
+applications:
+- buildpack: python_buildpack
+  command: gunicorn --env DJANGO_SETTINGS_MODULE=efny2019.settings.production efny2019.wsgi
+    -b 0.0.0.0:$PORT
+  domain: mybluemix.net
+  host: efny2019
+  instances: 1
+  memory: 256MB
+  name: efny2019
+  timeout: 180
+domain: mybluemix.net
+host: efny2019
